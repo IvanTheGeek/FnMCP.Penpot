@@ -15,16 +15,16 @@ This document outlines the development roadmap for FnMCP.Penpot, detailing phase
 
 ### Total Estimated Duration: 12 Weeks
 
-- **Phase 1**: Foundation (Weeks 1-2)
-- **Phase 2**: MCP Protocol Implementation (Weeks 3-4)
-- **Phase 3**: Penpot Integration (Weeks 5-6)
-- **Phase 4**: Event Sourcing Infrastructure (Weeks 7-8)
-- **Phase 5**: Complete MCP Features (Weeks 9-10)
-- **Phase 6**: Testing, Documentation, and Polish (Weeks 11-12)
+- **Phase 1**: Foundation
+- **Phase 2**: MCP Protocol Implementation
+- **Phase 3**: Penpot Integration
+- **Phase 4**: Event Sourcing Infrastructure
+- **Phase 5**: Complete MCP Features
+- **Phase 6**: Testing, Documentation, and Polish
 
 ---
 
-## Phase 1: Foundation (Weeks 1-2)
+## Phase 1: Foundation
 
 ### Goals
 Establish the project foundation with core types, domain model, and repository interface.
@@ -603,4 +603,4 @@ The roadmap balances ambition with pragmatism, focusing on core features first w
 
 **Document Status**: Initial Draft  
 **Next Review**: End of Phase 1  
-**Maintained By**: Project Team
+**Maintained By**: IvanTheGeek

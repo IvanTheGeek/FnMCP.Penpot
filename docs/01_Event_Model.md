@@ -19,6 +19,9 @@ This document details the Event Model for FnMCP.Penpot, following Event Modeling
 2. **Events (Orange)**: Facts about what has happened
 3. **Views/Read Models (Green)**: Data projections for queries
 4. **Automation (Purple)**: Reactive policies triggered by events
+   - Can be implemented as a **Screen** (human-operated interface)
+   - Can be implemented as a **Public API** (for external system integration)
+   - In this MCP project, automation is primarily reactive policies, though the MCP protocol itself serves as the public API
 
 ### Time-Based Organization
 
@@ -948,4 +951,4 @@ This event model provides a complete blueprint for the FnMCP.Penpot system's beh
 
 **Document Status**: Initial Draft  
 **Next Review**: After domain model finalization  
-**Maintained By**: Project Team
+**Maintained By**: IvanTheGeek

@@ -20,11 +20,12 @@ FnMCP.Penpot is an independent implementation of a Model Context Protocol (MCP) 
 
 ## Architectural Philosophy
 
-### 1. Functional Programming with F#
+### 1. Functional Programming with F# (fsharp)
 
 This project leverages F# as the primary language, embracing:
+
 - **Immutability by default**: All data structures are immutable unless explicitly required otherwise
-- **Pure functions**: Side effects are isolated and made explicit
+ - **Pure functions**: Side effects are isolated and made explicit
 - **Composition over inheritance**: Building complex behaviors from simple, composable functions
 - **Railway-oriented programming**: Using Result/Option types for error handling
 - **Algebraic data types**: Modeling domains with discriminated unions and records
@@ -34,16 +35,19 @@ This project leverages F# as the primary language, embracing:
 Following **Adam Dymitruk's Event Modeling** methodology and **Martin Dilger's** teachings:
 
 #### Event Modeling Principles
+
 - **Events as first-class citizens**: All state changes are captured as immutable events
 - **Time-based reasoning**: Understanding the system through sequences of events
 - **Visual modeling**: Using event storming and modeling techniques
 - **Four core patterns**:
+
   1. **Commands**: User intentions that trigger state changes
   2. **Events**: Facts about what happened in the system
   3. **Views/Projections**: Read models derived from events
-  4. **Automation**: Reactive processes triggered by events
+  4. **Screens/Automation**: Reactive processes triggered by events
 
 #### Event Sourcing Implementation
+
 - **Event Store**: All events are persisted in chronological order
 - **Aggregate Roots**: Domain entities that ensure consistency boundaries
 - **Event Replay**: Ability to reconstruct state from event history
@@ -54,15 +58,38 @@ Following **Adam Dymitruk's Event Modeling** methodology and **Martin Dilger's**
 Following **Scott Wlaschin's** principles from "Domain Modeling Made Functional":
 
 #### Making Illegal States Unrepresentable
+
 - Use the type system to enforce business rules at compile time
 - Model workflows as explicit pipelines of transformations
 - Separate validated from unvalidated data using wrapper types
 
 #### Domain Modeling Approach
+
 1. **Understand the Domain**: Collaborate with domain experts to understand Penpot and MCP semantics
 2. **Model the Domain in Types**: Create types that represent the domain concepts accurately
 3. **Compose Workflows**: Build complete workflows from smaller, composable functions
 4. **Handle Errors Explicitly**: Use Result types to make error paths visible
+
+### 4. Documentation and Example Conventions
+
+#### Language and Format Preferences
+
+- **Code Examples**: All examples should favor **F#** to showcase functional programming patterns and type safety
+- **Internal Configuration**: Use **YAML** for configuration examples, documentation, and internal system representations
+  - YAML is more readable and maintainable for human-edited content
+  - Supports comments and better visual structure
+- **External System Interactions**: Use **JSON** only when documenting external system interactions
+  - MCP Protocol (JSON-RPC 2.0) requires JSON
+  - Penpot API uses JSON for requests/responses
+  - External integrations that mandate JSON format
+
+#### Rationale
+
+This convention ensures:
+- Documentation remains readable and maintainable
+- Code examples reflect the project's functional programming philosophy
+- Format choices align with their intended use cases (human vs. machine consumption)
+- Clear distinction between internal representations and external protocol requirements
 
 ---
 
@@ -284,6 +311,7 @@ Views derived from event streams:
 
 ### Purpose
 A separate project will provide event storage and retrieval. This API must be:
+
 - **Reusable**: Usable by other projects beyond FnMCP.Penpot
 - **Simple**: Easy to integrate and understand
 - **Scalable**: Handle high event volumes
@@ -584,37 +612,37 @@ Keep documentation close to code and updated.
 
 ## Next Steps
 
-### Phase 1: Foundation (Weeks 1-2)
+### Phase 1: Foundation
 1. Set up F# project structure
 2. Define core domain types
 3. Implement basic event model
 4. Create repository API interface
 
-### Phase 2: MCP Protocol (Weeks 3-4)
+### Phase 2: MCP Protocol
 1. Implement JSON-RPC 2.0 handler
 2. Build MCP message types
 3. Create stdio transport
 4. Implement basic server/client
 
-### Phase 3: Penpot Integration (Weeks 5-6)
+### Phase 3: Penpot Integration
 1. Penpot API client
 2. Type mappings
 3. Basic MCP tools for Penpot
 4. Authentication and authorization
 
-### Phase 4: Event Sourcing (Weeks 7-8)
+### Phase 4: Event Sourcing
 1. Repository implementation
 2. Event store integration
 3. Projection system
 4. Snapshot mechanism
 
-### Phase 5: Complete MCP Features (Weeks 9-10)
+### Phase 5: Complete MCP Features
 1. Resources implementation
 2. Prompts system
 3. Sampling support
 4. Logging and monitoring
 
-### Phase 6: Testing and Documentation (Weeks 11-12)
+### Phase 6: Testing and Documentation
 1. Comprehensive test suite
 2. Integration tests
 3. Documentation
@@ -666,4 +694,4 @@ This document serves as the foundation for the project's evolution, establishing
 
 **Document Status**: Initial Draft  
 **Next Review**: After Phase 1 completion  
-**Maintained By**: Project Team
+**Maintained By**: IvanTheGeek
