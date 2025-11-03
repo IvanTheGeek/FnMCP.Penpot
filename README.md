@@ -120,27 +120,43 @@ FnMCP.Penpot/
 
 ## Development Principles
 
-### 1. Functional Programming
+### 1. Functional Programming with F#
 - Immutability by default
 - Pure functions with explicit side effects
 - Composition over inheritance
 - Railway-oriented programming for error handling
+- Algebraic data types (discriminated unions and records)
 
 ### 2. Event Modeling
 - Events as first-class citizens
 - Time-based reasoning about system behavior
-- Commands, Events, Views, and Automation patterns
+- Four core patterns:
+  - **Commands (Blue)**: User intentions
+  - **Events (Orange)**: Facts about what happened
+  - **Views/Read Models (Green)**: Data projections for queries
+  - **Automation (Purple)**: Reactive policies, Screens (human-operated), or Public APIs (external integration)
 
 ### 3. Type-Driven Design
 - Make illegal states unrepresentable
 - Use the type system to enforce business rules
 - Separate validated from unvalidated data
+- Model workflows as explicit pipelines of transformations
 
 ### 4. Event Sourcing
 - Append-only event store
 - Event replay for state reconstruction
 - Temporal queries
 - Complete audit trail
+
+### 5. Documentation and Example Conventions
+- **Code Examples**: All examples favor **F#** to showcase functional programming patterns
+- **Internal Configuration**: Use **YAML** for configuration, documentation, and internal representations
+  - More readable and maintainable for human-edited content
+  - Supports comments and better visual structure
+- **External System Interactions**: Use **JSON** only for external system interactions
+  - MCP Protocol (JSON-RPC 2.0) requires JSON
+  - Penpot API uses JSON for requests/responses
+  - External integrations that mandate JSON format
 
 ---
 
@@ -238,6 +254,8 @@ See [LICENSE](LICENSE) file for details.
 ## Project Team
 
 This is an independent implementation of MCP for Penpot, developed with a focus on functional programming excellence and architectural best practices.
+
+**Maintained By**: IvanTheGeek
 
 ---
 
